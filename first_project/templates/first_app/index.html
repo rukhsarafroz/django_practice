@@ -1,9 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
 <html>
   <head>
-    <title>First App</title>
+    <title>React App</title>
   </head>
-  <body>
-    <h1>This is index.html</h1>
-    {{insert_me}}
+  <body style="background-color: black; color: white;">
+    <h1>Welcome to React App</h1>
+    <img
+      src="{% static 'images/logo512.png' %}"
+      alt="react logo"
+      height="60px"
+      width="60px"
+    />
   </body>
 </html>
