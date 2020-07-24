@@ -2,11 +2,29 @@
 {% load static %}
 <html>
   <head>
-    <title>React App</title>
+    <title>Django files</title>
     <link rel="stylesheet" href="{% static 'css/myStyle.css' %}" />
   </head>
   <body>
-    <h1>Welcome to React App</h1>
-    <img src="{% static 'images/logo512.png' %}" alt="react logo" />
+    <h1>Welcome to Django</h1>
+    <h2>Access Records:</h2>
+    <div class="record">
+      {% if access_record %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Access</th>
+        </thead>
+        {% for acc in access_record %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No access record found</p>
+      {% endif %}
+    </div>
   </body>
 </html>
